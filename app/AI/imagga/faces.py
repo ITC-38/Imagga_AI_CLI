@@ -7,12 +7,12 @@ class ImaggaFaceDetectionsEndpoint(BaseImaggaManager):
         super().__init__(api_key, api_secret)
         self.FACE_DETECTIONS_BASE_URL = self.API_BASE_URL + '/faces/detections'
 
-    def get_face_detection_data(self, img_url: str):
+    def get_face_detection_data(self, img_url: str) -> dict | int:
         response = self.get(
             self.FACE_DETECTIONS_BASE_URL,
             params={
                 'image_url': img_url,
-                'return_face_id ': 1
+                'return_face_id': True
             },
             headers=self.headers,
             auth=(self.api_key, self.api_secret)

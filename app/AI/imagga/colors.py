@@ -7,7 +7,7 @@ class ImaggaColorsEndpoint(BaseImaggaManager):
         super().__init__(api_key, api_secret)
         self.API_COLORS_BASE_URL = self.API_BASE_URL + '/colors'
 
-    def get_colors_data(self, img_url: str):
+    def get_colors_data(self, img_url: str) -> dict | int:
         response = self.get(
             self.API_COLORS_BASE_URL,
             params={
