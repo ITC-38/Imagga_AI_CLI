@@ -1,4 +1,4 @@
-from app.AI.imagga.base import BaseImaggaManager
+from .base import BaseImaggaManager
 
 
 class ImaggaColorsEndpoint(BaseImaggaManager):
